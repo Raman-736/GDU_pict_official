@@ -66,7 +66,7 @@ export default function Footer() {
 
       <div className="wrap footer-bottom">
         <span>© {new Date().getFullYear()} GameDevUtopia PICT</span>
-        <span>Thanks for playing ▸ Continue? 9</span>
+        <span>Thanks for playing ▸ Continue? </span>
       </div>
     </footer>
   );
