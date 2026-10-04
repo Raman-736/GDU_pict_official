@@ -1,0 +1,114 @@
+.boot {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.boot-shutter {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 50.5%;
+  background: var(--ink);
+  transition: transform 0.65s cubic-bezier(0.7, 0, 0.2, 1);
+}
+
+.boot-shutter-top {
+  top: 0;
+  border-bottom: 2px solid var(--gold);
+}
+
+.boot-shutter-bottom {
+  bottom: 0;
+  border-top: 2px solid var(--gold);
+}
+
+.boot.is-exit .boot-shutter-top {
+  transform: translateY(-101%);
+}
+
+.boot.is-exit .boot-shutter-bottom {
+  transform: translateY(101%);
+}
+
+.boot-inner {
+  position: relative;
+  display: grid;
+  justify-items: start;
+  gap: 22px;
+  width: min(420px, calc(100vw - 48px));
+  transition: opacity 0.2s ease;
+}
+
+.boot.is-exit .boot-inner {
+  opacity: 0;
+}
+
+.boot-inner img {
+  border: 2px solid var(--gold);
+  animation: boot-logo 0.5s steps(4) both;
+}
+
+@keyframes boot-logo {
+  from {
+    opacity: 0;
+    filter: brightness(3);
+  }
+}
+
+.boot-lines {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font: 500 12px/2 var(--f-mono);
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+.boot-lines li {
+  opacity: 0;
+  animation: boot-line 0.01s linear forwards;
+  animation-delay: calc(0.25s + var(--i) * 0.38s);
+  white-space: nowrap;
+}
+
+.boot-lines li:first-child {
+  color: var(--gold);
+}
+
+@keyframes boot-line {
+  to {
+    opacity: 1;
+  }
+}
+
+.boot-bar {
+  width: 100%;
+  height: 14px;
+  padding: 2px;
+  border: 2px solid var(--gold);
+}
+
+.boot-bar span {
+  display: block;
+  height: 100%;
+  background: repeating-linear-gradient(90deg, var(--gold) 0 10px, transparent 10px 13px);
+  animation: boot-fill 2s steps(18) forwards;
+  width: 0;
+}
+
+@keyframes boot-fill {
+  to {
+    width: 100%;
+  }
+}
+
+.boot-skip {
+  font: 500 10px var(--f-mono);
+  color: var(--dim);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}

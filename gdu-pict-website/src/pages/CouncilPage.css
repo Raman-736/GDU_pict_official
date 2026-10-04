@@ -1,0 +1,218 @@
+.council-page {
+  min-height: 100vh;
+  padding: calc(var(--nav-h) + 56px) 0 clamp(96px, 12vw, 140px);
+  background-color: var(--ink);
+}
+
+.cp-head {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  margin-bottom: clamp(48px, 7vw, 80px);
+}
+
+.cp-back {
+  justify-self: start;
+  margin-bottom: 32px;
+  font: 500 12px var(--f-mono);
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.cp-back:hover {
+  color: var(--gold);
+}
+
+.cp-tag {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font: 600 12px var(--f-ui);
+  letter-spacing: 0.3em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+.cp-tag::before,
+.cp-tag::after {
+  content: "";
+  width: clamp(40px, 10vw, 120px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold));
+}
+
+.cp-tag::after {
+  transform: scaleX(-1);
+}
+
+.cp-tag span {
+  padding: 6px 14px;
+  border: 1px solid var(--gold);
+}
+
+.cp-title {
+  margin-top: 26px;
+  font-size: clamp(52px, 10vw, 140px);
+}
+
+.cp-sub {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 16px;
+  margin-top: 26px;
+  font: 500 12px var(--f-mono);
+  letter-spacing: 0.24em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.cp-sub i {
+  font-style: normal;
+  color: var(--gold);
+}
+
+/* ---- grid of boxes ---- */
+/* 4 per row; the last, shorter row stays centred */
+.cp-grid {
+  --cols: 4;
+  --gap: clamp(16px, 2.2vw, 28px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--gap);
+}
+
+.cp-grid > .member {
+  flex: 0 0 calc((100% - (var(--cols) - 1) * var(--gap)) / var(--cols));
+  min-width: 0;
+}
+
+.member {
+  --hud-c: var(--c);
+  display: flex;
+  flex-direction: column;
+  padding: 18px;
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.3s ease;
+}
+
+.member:hover {
+  transform: translateY(-8px);
+  border-color: color-mix(in srgb, var(--c) 45%, transparent);
+}
+
+.member-photo {
+  position: relative;
+  aspect-ratio: 4 / 4.4;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #08080b;
+}
+
+.member-photo > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 22%; /* keep heads in frame for tall portraits */
+  filter: grayscale(0.25);
+  transition: transform 0.6s ease, filter 0.4s ease;
+}
+
+.member:hover .member-photo > img {
+  transform: scale(1.05);
+  filter: none;
+}
+
+.member-empty {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(60% 55% at 50% 50%, color-mix(in srgb, var(--c) 22%, transparent), transparent 70%),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.025) 0 1px, transparent 1px 4px);
+}
+
+.member-empty img {
+  position: absolute;
+  width: 62%;
+  opacity: 0.08;
+  filter: grayscale(1);
+  mix-blend-mode: screen;
+}
+
+.member-empty span {
+  position: relative;
+  font: 400 clamp(44px, 5vw, 64px) var(--f-display);
+  color: var(--c);
+  text-shadow: 0 0 34px color-mix(in srgb, var(--c) 60%, transparent);
+}
+
+
+.member-info {
+  padding: 22px 6px 18px;
+  text-align: center;
+}
+
+.member-info h2 {
+  font: 700 clamp(17px, 1.7vw, 21px) / 1.25 var(--f-ui);
+  color: var(--cream);
+}
+
+.member-info h2.is-tba {
+  color: var(--dim);
+  font-weight: 500;
+}
+
+.member-role {
+  margin-top: 8px;
+  font: 600 11.5px var(--f-mono);
+  letter-spacing: 0.16em;
+  color: var(--c);
+  text-transform: uppercase;
+}
+
+.member-socials {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin-top: auto;
+  padding: 14px 0 4px;
+  border-top: 1px solid var(--line);
+}
+
+.member-socials a,
+.member-socials span {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  color: var(--c);
+}
+
+.member-socials span {
+  opacity: 0.25;
+}
+
+.member-socials a:hover {
+  color: var(--cream);
+}
+
+@media (max-width: 1000px) {
+  .cp-grid {
+    --cols: 3;
+  }
+}
+
+@media (max-width: 760px) {
+  .cp-grid {
+    --cols: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .cp-grid {
+    --cols: 1;
+  }
+}

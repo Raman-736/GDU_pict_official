@@ -1,0 +1,74 @@
+.coin {
+  padding: 0 0 clamp(96px, 12vw, 150px);
+}
+
+.coin-box {
+  position: relative;
+  padding: clamp(48px, 8vw, 110px) clamp(24px, 6vw, 80px);
+  border: 2px solid #000;
+  background:
+    repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.06) 0 14px, transparent 14px 28px),
+    var(--gold);
+  box-shadow: 10px 10px 0 var(--gold-deep);
+  color: var(--ink);
+  overflow: hidden;
+}
+
+.coin-blink {
+  font: 700 12px var(--f-mono);
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  animation: blink 1.2s steps(1) infinite;
+}
+
+.coin-title {
+  margin-top: 20px;
+  font-size: clamp(48px, 8.5vw, 124px);
+  color: var(--ink);
+  text-shadow:
+    1px 1px 0 var(--gold-deep),
+    2px 2px 0 var(--gold-deep),
+    3px 3px 0 var(--gold-deep),
+    4px 4px 0 var(--gold-deep),
+    5px 5px 0 var(--gold-darker),
+    6px 6px 0 var(--gold-darker);
+}
+
+.coin-title .gold {
+  color: var(--cream);
+}
+
+.coin-text {
+  max-width: 560px;
+  margin-top: 28px;
+  font: 500 clamp(16px, 1.5vw, 19px) var(--f-ui);
+}
+
+.coin-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 36px;
+}
+
+.coin .btn {
+  --b-bg: var(--ink);
+  --b-fg: var(--gold);
+  --b-sh: #000;
+}
+
+.coin .btn:hover {
+  background: #1a1a1a;
+}
+
+.coin .btn-ghost {
+  --b-bg: transparent;
+  --b-fg: var(--ink);
+  --b-sh: var(--gold-deep);
+  border-color: var(--ink);
+  backdrop-filter: none;
+}
+
+.coin .btn-ghost:hover {
+  background: rgba(0, 0, 0, 0.08);
+}

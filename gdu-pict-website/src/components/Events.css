@@ -1,0 +1,232 @@
+.events {
+  border-top: 1px solid var(--line);
+}
+
+/* ---- Glitched ---- */
+.glitched {
+  --hud-c: var(--pink);
+  padding: clamp(24px, 4vw, 48px);
+  overflow: hidden;
+  background:
+    radial-gradient(60% 70% at 100% 0%, rgba(255, 69, 181, 0.16), transparent 60%),
+    radial-gradient(50% 60% at 0% 100%, rgba(74, 134, 255, 0.14), transparent 60%),
+    var(--ink-2);
+}
+
+.glitched-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  font: 500 12px var(--f-mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.glitched-badge {
+  color: var(--pink);
+}
+
+.glitched-ed {
+  color: var(--muted);
+}
+
+.glitched-ed b {
+  margin-right: 6px;
+  font: 400 26px var(--f-display);
+  color: var(--cream);
+}
+
+.glitched-word {
+  position: relative;
+  margin: clamp(16px, 3vw, 32px) 0 clamp(24px, 3vw, 40px);
+  font: 400 clamp(40px, 12.6vw, 196px) / 0.85 var(--f-display);
+  letter-spacing: -0.02em;
+  color: var(--cream);
+}
+
+.glitched-word::before,
+.glitched-word::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.glitched-word::before {
+  color: var(--pink);
+  animation: glitch-a 3.4s infinite steps(1);
+}
+
+.glitched-word::after {
+  color: #2fe6ff;
+  animation: glitch-b 3.4s infinite steps(1);
+}
+
+@keyframes glitch-a {
+  0%, 84%, 100% { transform: none; clip-path: inset(0 0 100% 0); }
+  86% { transform: translate(-6px, 2px); clip-path: inset(8% 0 58% 0); }
+  89% { transform: translate(8px, -2px); clip-path: inset(62% 0 6% 0); }
+  92% { transform: translate(-4px, 0); clip-path: inset(30% 0 42% 0); }
+}
+
+@keyframes glitch-b {
+  0%, 84%, 100% { transform: none; clip-path: inset(0 0 100% 0); }
+  87% { transform: translate(6px, -2px); clip-path: inset(48% 0 22% 0); }
+  90% { transform: translate(-8px, 2px); clip-path: inset(4% 0 72% 0); }
+  93% { transform: translate(4px, 0); clip-path: inset(72% 0 4% 0); }
+}
+
+.glitched-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: clamp(24px, 5vw, 72px);
+}
+
+.glitched-text {
+  font-size: clamp(16px, 1.4vw, 18px);
+  color: var(--text);
+}
+
+.glitched-acts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line-2);
+}
+
+.glitched-acts li {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+  font: 600 15px var(--f-ui);
+  color: var(--cream);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.glitched-acts span {
+  font: 500 10px var(--f-mono);
+  color: var(--pink);
+}
+
+.glitched-guests {
+  margin-top: 32px;
+  font-size: 15px;
+  color: var(--cream);
+}
+
+.glitched-guests span {
+  margin-right: 12px;
+  padding: 4px 8px;
+  background: var(--pink);
+  color: var(--ink);
+  font: 700 10px var(--f-mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* ---- quest log ---- */
+.quests {
+  margin-top: clamp(64px, 8vw, 100px);
+}
+
+.quests-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  margin-bottom: 20px;
+}
+
+.quests-head h3 {
+  font-size: clamp(28px, 3.6vw, 44px);
+}
+
+.quests-head p {
+  font: 500 12px var(--f-mono);
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.quest-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 2px solid var(--cream);
+}
+
+.quest-list li {
+  display: grid;
+  grid-template-columns: 64px 1.2fr 1fr auto;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 12px;
+  border-bottom: 1px solid var(--line-2);
+  transition: background 0.25s ease, padding 0.25s ease;
+}
+
+.quest-list li:hover {
+  background: rgba(247, 168, 35, 0.06);
+  padding-left: 20px;
+}
+
+.quest-num {
+  font: 500 12px var(--f-mono);
+  color: var(--gold);
+}
+
+.quest-title {
+  font: 600 clamp(17px, 1.6vw, 21px) var(--f-ui);
+  color: var(--cream);
+}
+
+.quest-meta {
+  font: 400 13px var(--f-mono);
+  color: var(--muted);
+}
+
+.quest-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font: 600 10px var(--f-mono);
+  letter-spacing: 0.16em;
+  color: var(--green);
+  text-transform: uppercase;
+}
+
+.quest-status::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--green);
+}
+
+@media (max-width: 860px) {
+  .glitched-grid {
+    grid-template-columns: 1fr;
+  }
+  .quest-list li {
+    grid-template-columns: 48px 1fr;
+    gap: 4px 12px;
+  }
+  .quest-meta,
+  .quest-status {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 520px) {
+  .glitched-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
