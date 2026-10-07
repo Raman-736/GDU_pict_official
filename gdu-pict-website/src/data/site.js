@@ -152,7 +152,7 @@ export const WINS = {
 };
 
 export const MENTORS = [
-  { name: "Ankit Gaiwala", role: "Senior Manager, EA", note: "Speaker at Glitched 3.0" },
+  { name: "Ankit Gajiwala", role: "Senior Manager, EA", note: "Speaker at Glitched 3.0" },
   { name: "Mohit Sethi", role: "Software Engineer, EA Games" },
   { name: "Bjorn Ritzl", role: "Chairperson, Defold", note: "International sponsor" },
   { name: "Ubisoft Pune", role: "Studio Technical Director & team" },
