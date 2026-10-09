@@ -103,7 +103,7 @@
 
 .dossier div {
   display: grid;
-  grid-template-columns: 96px 1fr;
+  grid-template-columns: 190px 1fr; /* wide enough for "FACULTY & COORDINATOR" */
   gap: 12px;
   padding: 11px 18px;
   border-bottom: 1px dashed var(--line);

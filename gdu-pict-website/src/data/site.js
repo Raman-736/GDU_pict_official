@@ -58,13 +58,12 @@ export const ABOUT = {
     },
   ],
   dossier: [
-    { k: "Founded", v: "2020 · PICT, Pune" },
-    { k: "Founders", v: "Mihir Ranade, Apurv Henkare, Prajwal Pawar" },
-    { k: "Faculty", v: "Dr. Kavita Sultanpure (Faculty Mentor), Dr. Girish Potdar" },
-    { k: "Mentor", v: "Himanshu Pandey" },
-    { k: "Lineage", v: "3 junior batches have led the club, each left it stronger" },
-    { k: "Sponsor", v: "Defold, the engine used by King (international)" },
-    { k: "Network", v: "GDU PICT Pune · GDU IIIT Kottayam (est. 2021)" },
+    { k: "Founded in 2020 by", v: "Mihir Ranade, Apurv Henkare, Prajwal Pawar" },
+    { k: "Board of Directors", v: "Himanshu Pandey, Sai Tejashwin" },
+    { k: "Lineage", v: "5 junior batches have led the club, each left it stronger" },
+    { k: "Faculty & Coordinator", v: "Dr. Kavita Sultanpure (Faculty Mentor), Dr. Girish Potdar" },
+    { k: "Partners", v: "Defold, GameDoora, Dimensions" },
+    { k: "Network & Branches", v: "GDU PICT Pune · GDU IIIT Kottayam (est. 2021)" },
   ],
 };
 
